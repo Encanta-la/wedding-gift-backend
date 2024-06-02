@@ -15,6 +15,7 @@ export class ZodValidationPipe implements PipeTransform {
       ?.zodSchema;
 
     if (zodSchema) {
+      console.log('value', value);
       const parseResult = zodSchema.safeParse(value);
 
       if (!parseResult.success) {

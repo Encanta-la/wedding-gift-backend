@@ -15,7 +15,11 @@ export class GiftService {
   }
 
   findAll() {
-    return this.prismaService.gift.findMany();
+    return this.prismaService.gift.findMany({
+      orderBy: {
+        giftBuyerId: 'desc',
+      },
+    });
   }
 
   findOne(id: number) {

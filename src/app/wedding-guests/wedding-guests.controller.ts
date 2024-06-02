@@ -33,6 +33,20 @@ export class WeddingGuestsController {
     return this.weddingGuestsService.findOne(+id);
   }
 
+  @Post('getOrCreate/:phone')
+  findByPhoneOrCreateOne(
+    @Param('phone') phone: string,
+    @Body() createWeddingGuestDto: CreateWeddingGuestDto,
+  ) {
+    console.log('phone', phone);
+    console.log('createWeddingGuestDto', createWeddingGuestDto);
+
+    return this.weddingGuestsService.findByPhoneOrCreateOne(
+      phone,
+      createWeddingGuestDto,
+    );
+  }
+
   @Patch(':id')
   update(
     @Param('id', ParseIntPipe) id: string,

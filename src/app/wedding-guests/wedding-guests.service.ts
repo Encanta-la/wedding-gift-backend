@@ -23,6 +23,17 @@ export class WeddingGuestsService {
     });
   }
 
+  findByPhoneOrCreateOne(
+    phone: string,
+    createWeddingGuestDto: CreateWeddingGuestDto,
+  ) {
+    return this.prismaService.weddingGuest.upsert({
+      where: { phone },
+      create: createWeddingGuestDto,
+      update: {},
+    });
+  }
+
   update(id: number, updateWeddingGuestDto: UpdateWeddingGuestDto) {
     return this.prismaService.weddingGuest.update({
       where: { id },
