@@ -36,6 +36,6 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
   // #endregion
 
-  await app.listen(5000);
+  await app.listen(process.env.PORT || 80);
 }
 bootstrap();
