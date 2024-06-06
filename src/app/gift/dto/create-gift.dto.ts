@@ -7,6 +7,7 @@ export const createGiftDto = extendApi(
     .object({
       name: z.string(),
       photoUrl: z.string(),
+      linkUrl: z.string(),
       description: z.string(),
       voltage: z.number(),
       color: z.string(),

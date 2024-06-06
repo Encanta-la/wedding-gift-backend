@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Gift" ADD COLUMN     "linkUrl" VARCHAR(255) NOT NULL DEFAULT '',
+ALTER COLUMN "voltage" DROP NOT NULL;

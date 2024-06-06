@@ -19,8 +19,9 @@ model Gift {
   id          BigInt @id @default(autoincrement())
   name        String @db.VarChar(255)
   photoUrl    String @db.VarChar(255)
+  linkUrl     String @default("") @db.VarChar(255)
   description String @db.VarChar(510)
-  voltage     Int
+  voltage     Int?
   color       String @db.VarChar(255)
   price       Float
 
